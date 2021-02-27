@@ -23,6 +23,6 @@ import { DateComponent } from './components/date/date.component';
     SelectComponent,
   ],
   imports: [CommonModule, IonicModule, ReactiveFormsModule, FormsModule],
-  exports: [DynamicFormComponent],
+  exports: [DynamicFormComponent, ReactiveFormsModule],
 })
 export class DynamicformModule {}

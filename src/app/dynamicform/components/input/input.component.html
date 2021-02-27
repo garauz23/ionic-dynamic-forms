@@ -1,0 +1,15 @@
+<form [formGroup]="group">
+  <ion-item lines="full">
+    <ion-label position="floating">{{ field.label }}</ion-label>
+    <ion-input
+      [formControlName]="field.name"
+      [placeholder]="field.placeholder || field.label"
+      [type]="field.inputType"
+    ></ion-input>
+  </ion-item>
+  <ng-container *ngFor="let validation of field.validations;" >
+    <ion-item *ngIf="group.get(field.name).hasError(validation.name) && group.get(field.name).touched" lines="none">
+      <ion-text>{{validation.message}}</ion-text>
+    </ion-item>
+  </ng-container>
+</form>

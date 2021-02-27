@@ -1,0 +1,9 @@
+
+<form [formGroup]="group">
+  <ion-item >
+    <ion-label>{{field.label}}</ion-label>
+    <ion-select [placeholder]="field.placeholder" [formControlName]="field.name">
+      <ion-select-option [value]="option" *ngFor="let option of field.options">{{option}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</form>

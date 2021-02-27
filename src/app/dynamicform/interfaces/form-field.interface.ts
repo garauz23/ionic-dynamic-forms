@@ -14,4 +14,5 @@ export interface IFieldConfig {
   type: string;
   value?: any;
   validations?: IValidator[];
+  action?: any;
 }

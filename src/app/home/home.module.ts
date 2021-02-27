@@ -6,13 +6,14 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
-
+import { DynamicformModule } from '../dynamicform/dynamicform.module';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    DynamicformModule
   ],
   declarations: [HomePage]
 })

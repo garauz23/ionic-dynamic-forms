@@ -9,9 +9,9 @@ import { IFieldConfig } from '../../interfaces/form-field.interface';
 })
 export class DynamicFormComponent implements OnInit {
   @Input() fields: IFieldConfig[] = [];
+  @Input() form: FormGroup;
   @Output() submit: EventEmitter<any> = new EventEmitter<any>();
-
-  form: FormGroup;
+  @Output() formGroup: EventEmitter<any> = new EventEmitter<any>();
 
   get value() {
     return this.form.value;
@@ -43,6 +43,7 @@ export class DynamicFormComponent implements OnInit {
       );
       group.addControl(field.name, control);
     });
+    this.formGroup.emit(group);
     return group;
   }
 

@@ -1,10 +1,10 @@
 <form [formGroup]="group">
   <ion-radio-group [value]="field.value" [formControlName]="field.name">
     <ion-list-header>
-      <ion-label>{{field.label}}</ion-label>
+      <ion-label>{{ field.label }}</ion-label>
     </ion-list-header>
-    <ion-item *ngFor="let option of field.options ; let i = index">
-      <ion-label>{{option.value}}</ion-label>
+    <ion-item *ngFor="let option of field.options; let i = index">
+      <ion-label>{{ option.value }}</ion-label>
       <ion-radio slot="start" [value]="option.key"></ion-radio>
     </ion-item>
   </ion-radio-group>

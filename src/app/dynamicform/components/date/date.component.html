@@ -1,0 +1,22 @@
+<form [formGroup]="group">
+  <ion-item>
+    <ion-label position="floating">{{ field.label }}</ion-label>
+    <ion-datetime
+      [formControlName]="field.name"
+      displayFormat="MM/DD/YYYY"
+      min="1994-03-14"
+      max="2012-12-09"
+    ></ion-datetime>
+  </ion-item>
+  <ng-container *ngFor="let validation of field.validations">
+    <ion-item
+      *ngIf="
+        group.get(field.name).hasError(validation.name) &&
+        group.get(field.name).touched
+      "
+      lines="none"
+    >
+      <ion-text>{{ validation.message }}</ion-text>
+    </ion-item>
+  </ng-container>
+</form>

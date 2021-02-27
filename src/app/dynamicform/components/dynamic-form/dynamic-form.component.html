@@ -1,0 +1,10 @@
+<form [formGroup]="form" (submit)="onSubmit($event)">
+  <ion-list>
+    <ng-container
+    *ngFor="let field of fields"
+    dynamicField
+    [field]="field"
+    [group]="form"
+  ></ng-container>
+  </ion-list>
+</form>

@@ -12,7 +12,7 @@
   </ion-header>
 
   <div>
-    <dynamic-form [fields]="regConfig" (formGroup)="setDynamicallyForm($event)"></dynamic-form>
+    <dynamic-form [fields]="regConfig" [formOptions]="formOptions" (formGroup)="setDynamicallyForm($event)"></dynamic-form>
     <!-- <dynamic-form [fields]="fields2"></dynamic-form> -->
   </div>
 </ion-content>

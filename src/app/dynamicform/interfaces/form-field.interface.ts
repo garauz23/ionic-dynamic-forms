@@ -15,4 +15,5 @@ export interface IFieldConfig {
   value?: any;
   validations?: IValidator[];
   action?: any;
+  resetOnSubmit?: boolean;
 }

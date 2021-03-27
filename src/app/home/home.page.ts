@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { IFieldConfig } from '../dynamicform/interfaces/form-field.interface';
+import { IFormOptions } from '../dynamicform/interfaces/form-options.interface';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,7 @@ import { IFieldConfig } from '../dynamicform/interfaces/form-field.interface';
 export class HomePage implements OnInit {
   public demoForm: FormGroup;
   public validForm = false;
+  public formOptions: IFormOptions = { resetOnSubmit: true };
   regConfig: IFieldConfig[] = [
     {
       type: 'input',

@@ -11,8 +11,18 @@ export interface IFieldConfig {
   placeholder?: string;
   options?: any[];
   collections?: any;
+  readonly?: boolean;
   type: string;
   value?: any;
   validations?: IValidator[];
-  action?: any;
+  dateOpts?: {
+    format?: string;
+      min?: string;
+      max?: string
+  };
+  action?: Function;
+}
+
+export interface IFormOptions {
+  resetOnSubmit?: boolean;
 }

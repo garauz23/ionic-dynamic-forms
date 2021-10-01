@@ -3,19 +3,16 @@ import { FormGroup } from '@angular/forms';
 import { IFieldConfig } from '../../interfaces/form-field.interface';
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss'],
+  selector: 'app-hidden',
+  templateUrl: './hidden.component.html',
+  styleUrls: ['./hidden.component.scss'],
 })
-export class ButtonComponent implements OnInit {
+export class HiddenComponent implements OnInit {
   field: IFieldConfig;
   group: FormGroup;
+
   constructor() { }
 
   ngOnInit() {}
-
-  isSubmitButton() {
-    return typeof this.field.action === 'undefined';
-  }
 
 }

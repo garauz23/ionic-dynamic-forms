@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { IFieldConfig } from '../../interfaces/form-field.interface';
+import { IFieldConfig, IFormOptions } from '../../interfaces/form-field.interface';
+
 @Component({
   selector: 'dynamic-form',
   templateUrl: './dynamic-form.component.html',
@@ -10,6 +11,7 @@ export class DynamicFormComponent implements OnInit {
   @Input() fields: IFieldConfig[] = [];
   @Input() form: FormGroup;
   @Input() formOptions: IFormOptions;
+
   @Output() submit: EventEmitter<any> = new EventEmitter<any>();
   @Output() formGroup: EventEmitter<any> = new EventEmitter<any>();
 
@@ -31,12 +33,11 @@ export class DynamicFormComponent implements OnInit {
     } else {
       this.validateAllFormFields(this.form);
     }
-  }
-
-  validateFormOption(form: FormGroup) {
-    if (this.formOptions.resetOnSubmit) {
-      form.reset();
+    console.log('formOptions', this.formOptions);
+    if (this.formOptions || this.formOptions.resetOnSubmit) {
+      this.form.reset();
     }
+
   }
 
   createControl(){

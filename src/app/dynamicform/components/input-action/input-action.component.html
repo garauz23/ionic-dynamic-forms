@@ -1,12 +1,13 @@
 <form [formGroup]="group">
-  <ion-item>
+  <ion-item lines="full" (click)="field?.action()">
     <ion-label position="floating">{{ field.label }}</ion-label>
-    <ion-datetime
+
+    <ion-input
+      *ngIf="field.inputType !== 'password' && field?.action"
       [formControlName]="field.name"
-      [displayFormat]="field.dateOpts.format || 'MM/DD/YYYY'"
-      [min]="field.dateOpts.min || '1900-01-01'"
-      [max]="field.dateOpts.max || '2021-01-01'"
-    ></ion-datetime>
+      [type]="field.inputType"
+      [readonly]="field.readonly"
+    ></ion-input>
   </ion-item>
   <ng-container *ngFor="let validation of field.validations">
     <ion-item
@@ -16,7 +17,7 @@
       "
       lines="none"
     >
-      <ion-text>{{ validation.message }}</ion-text>
+      <app-validate-message [validation]="validation"></app-validate-message>
     </ion-item>
   </ng-container>
 </form>

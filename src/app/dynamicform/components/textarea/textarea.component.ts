@@ -3,19 +3,15 @@ import { FormGroup } from '@angular/forms';
 import { IFieldConfig } from '../../interfaces/form-field.interface';
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss'],
+  selector: 'app-textarea',
+  templateUrl: './textarea.component.html',
+  styleUrls: ['./textarea.component.scss'],
 })
-export class ButtonComponent implements OnInit {
+export class TextareaComponent implements OnInit {
   field: IFieldConfig;
   group: FormGroup;
   constructor() { }
 
   ngOnInit() {}
-
-  isSubmitButton() {
-    return typeof this.field.action === 'undefined';
-  }
 
 }

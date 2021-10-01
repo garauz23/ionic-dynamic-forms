@@ -3,13 +3,14 @@ import { FormGroup } from '@angular/forms';
 import { IFieldConfig } from '../../interfaces/form-field.interface';
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss'],
+  selector: 'app-input-action',
+  templateUrl: './input-action.component.html',
+  styleUrls: ['./input-action.component.scss'],
 })
-export class ButtonComponent implements OnInit {
+export class InputActionComponent implements OnInit {
   field: IFieldConfig;
   group: FormGroup;
+
   constructor() { }
 
   ngOnInit() {}

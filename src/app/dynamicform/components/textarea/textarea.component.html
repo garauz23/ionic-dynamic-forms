@@ -1,16 +1,11 @@
 <form [formGroup]="group">
   <ion-item lines="full">
     <ion-label position="floating">{{ field.label }}</ion-label>
-    <ion-input *ngIf="field.inputType !== 'password'"
-      [formControlName]="field.name"
-      [type]="field.inputType" [readonly]="field.readonly"
-    ></ion-input>
 
-    <app-show-hide-password *ngIf="field.inputType === 'password'">
-      <ion-input
-      [formControlName]="field.name"
-      [type]="field.inputType"></ion-input>
-    </app-show-hide-password>
+    <ion-textarea
+    [formControlName]="field.name"
+    [readonly]="field.readonly"></ion-textarea>
+
   </ion-item>
   <ng-container *ngFor="let validation of field.validations">
     <ion-item

@@ -1,19 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Blank </ion-title>
+    <ion-title> Dynamic Forms </ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="getForm()">
+        <ion-icon slot="icon-only" name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Dynamic Forms</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div>
-    <dynamic-form [fields]="regConfig" [formOptions]="formOptions" (formGroup)="setDynamicallyForm($event)"></dynamic-form>
-    <!-- <dynamic-form [fields]="fields2"></dynamic-form> -->
+    <dynamic-form 
+    *ngIf="!loading" 
+    [fields]="listFields" 
+    [formOptions]="formOptions" 
+    (formGroup)="setDynamicallyForm($event)">
+  </dynamic-form>
   </div>
 </ion-content>
 

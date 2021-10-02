@@ -2,6 +2,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IFieldConfig, IFormOptions } from '../../interfaces/form-field.interface';
 
+// enum validations {
+//   'required' = Validators.required,
+
+// }
 @Component({
   selector: 'dynamic-form',
   templateUrl: './dynamic-form.component.html',
@@ -14,6 +18,12 @@ export class DynamicFormComponent implements OnInit {
 
   @Output() submit: EventEmitter<any> = new EventEmitter<any>();
   @Output() formGroup: EventEmitter<any> = new EventEmitter<any>();
+
+  public VALIDATORS = {
+    'required': Validators.required,
+    'onlyletters': Validators.pattern('^[a-zA-Z]+$'),
+    'email': Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
+  }
 
   get value() {
     return this.form.value;
@@ -55,14 +65,27 @@ export class DynamicFormComponent implements OnInit {
   }
 
   bindValidations(validations: any) {
+    console.log('validations', validations);
     if (validations.length > 0) {
       const validList = [];
-      validations.forEach(valid => {
-        validList.push(valid.validator);
+      validations.forEach(validation => {
+        console.log(validation.validator);
+        validList.push(this.getValidator(validation.validator));
       });
       return Validators.compose(validList);
     }
     return null;
+  }
+
+  getValidator(validator) {
+    console.log(validator);
+    return this.VALIDATORS[validator];
+    // const validList = [];
+    // validations.forEach(validator => {
+    //   console.log(validator);
+    //   validations = this.VALIDATORS[validator.validator]
+    // });
+    // return validList;
   }
 
   validateAllFormFields(formGroup: FormGroup) {

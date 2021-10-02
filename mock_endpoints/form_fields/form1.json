@@ -1,0 +1,128 @@
+{
+  "body": {
+    "fields": [
+      {
+        "type": "input",
+        "label": "Usuario",
+        "inputType": "text",
+        "name": "username",
+        "validations": [
+          {
+            "name": "required",
+            "validator": "required",
+            "message": "Escribe tu usuario perro"
+          },
+          {
+            "name": "pattern",
+            "validator": "onlyletters",
+            "message": "Solo texto"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "label": "Correo electronico",
+        "inputType": "email",
+        "name": "email",
+        "validations": [
+          {
+            "name": "required",
+            "validator": "required",
+            "message": "Escribe tu correo perro"
+          },
+          {
+            "name": "pattern",
+            "validator": "email",
+            "message": "email no valido"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "label": "Password",
+        "inputType": "password",
+        "name": "password",
+        "validations": [
+          {
+            "name": "required",
+            "validator": "required",
+            "message": "Escribe tu password perro"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Sexo",
+        "name": "gender",
+        "value": "male",
+        "options": [
+          {
+            "key": "male",
+            "value": "Masculino"
+          },
+          {
+            "key": "female",
+            "value": "Femenino"
+          },
+          {
+            "key": "amigue",
+            "value": "Amigue"
+          }
+        ]
+      },
+      {
+        "type": "date",
+        "label": "Fecha de nacimiento",
+        "name": "dob",
+        "validations": [
+          {
+            "name": "required",
+            "validator": "required",
+            "message": "Escribe tu dob perro"
+          }
+        ],
+        "dateOpts": {
+          "format": "MM/DD/YYYY"
+        }
+      },
+      {
+        "type": "radiobutton",
+        "label": "Pais",
+        "name": "country",
+        "value": "pa",
+        "options": [
+          {
+            "key": "pa",
+            "value": "Panama"
+          },
+          {
+            "key": "co",
+            "value": "Colombia"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "label": "Contenido",
+        "name": "content",
+        "validations": [
+          {
+            "name": "required",
+            "validator": "required",
+            "message": "Escribe el contenido perro"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "label": "Acepta los T&C",
+        "name": "term",
+        "value": false
+      }
+    ]
+  },
+  "status": {
+    "code": "U0000",
+    "description": "Se ha realizado la ejecución del servicio correctamente."
+  }
+}

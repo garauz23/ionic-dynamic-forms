@@ -1,36 +1,34 @@
+import { IFieldConfig, IValidator } from "../interfaces/form-field.interface";
 
-export class FormField<T> {
-    value: T;
-    key: string;
-    label: string;
-    required: boolean;
-    validator: string;
-    order: number;
-    controlType: string;
-    type: string;
-    options: { key: string; value: string }[];
+export class FormField implements IFieldConfig {
+  label?: string;
+  name?: string;
+  inputType?: string;
+  placeholder?: string;
+  options?: any[];
+  collections?: any;
+  readonly?: boolean;
+  type: string;
+  value?: any;
+  validations?: IValidator[];
+  dateOpts?: { format?: string; min?: string; max?: string; };
+  action?: Function;
 
-    constructor(
-      options: {
-        value?: T;
-        key?: string;
-        label?: string;
-        required?: boolean;
-        validator?: string;
-        order?: number;
-        controlType?: string;
-        type?: string;
-        options?: { key: string; value: string }[];
-      } = {}
-    ) {
-      this.value = options.value;
-      this.key = options.key || '';
-      this.label = options.label || '';
-      this.required = !!options.required;
-      this.validator = options.validator || '';
-      this.order = options.order === undefined ? 1 : options.order;
-      this.controlType = options.controlType || '';
-      this.type = options.type || '';
-      this.options = options.options || [];
-    }
+  constructor(
+    field: IFieldConfig
+  ) {
+    this.label = field.label;
+    this.name = field.name;
+    this.inputType = field.inputType;
+    this.placeholder = field.placeholder;
+    this.options = field.options;
+    this.collections = field.collections;
+    this.readonly = field.readonly;
+    this.type = field.type;
+    this.value = field.value;
+    this.validations = field.validations;
+    this.dateOpts = field.dateOpts;
+    this.action = field.action;
   }
+
+}

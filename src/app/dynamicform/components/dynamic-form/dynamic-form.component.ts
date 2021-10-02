@@ -1,11 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IFieldConfig, IFormOptions } from '../../interfaces/form-field.interface';
-
-// enum validations {
-//   'required' = Validators.required,
-
-// }
 @Component({
   selector: 'dynamic-form',
   templateUrl: './dynamic-form.component.html',
@@ -43,7 +38,6 @@ export class DynamicFormComponent implements OnInit {
     } else {
       this.validateAllFormFields(this.form);
     }
-    console.log('formOptions', this.formOptions);
     if (this.formOptions || this.formOptions.resetOnSubmit) {
       this.form.reset();
     }
@@ -65,11 +59,9 @@ export class DynamicFormComponent implements OnInit {
   }
 
   bindValidations(validations: any) {
-    console.log('validations', validations);
     if (validations.length > 0) {
       const validList = [];
       validations.forEach(validation => {
-        console.log(validation.validator);
         validList.push(this.getValidator(validation.validator));
       });
       return Validators.compose(validList);
@@ -78,14 +70,7 @@ export class DynamicFormComponent implements OnInit {
   }
 
   getValidator(validator) {
-    console.log(validator);
     return this.VALIDATORS[validator];
-    // const validList = [];
-    // validations.forEach(validator => {
-    //   console.log(validator);
-    //   validations = this.VALIDATORS[validator.validator]
-    // });
-    // return validList;
   }
 
   validateAllFormFields(formGroup: FormGroup) {

@@ -17,10 +17,10 @@
   </ion-header>
 
   <div>
-    <dynamic-form 
-    *ngIf="!loading" 
-    [fields]="listFields" 
-    [formOptions]="formOptions" 
+    <dynamic-form
+    *ngIf="!loading"
+    [fields]="listFields"
+    [formOptions]="formOptions"
     (formGroup)="setDynamicallyForm($event)">
   </dynamic-form>
   </div>

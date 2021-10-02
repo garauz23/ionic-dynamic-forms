@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { IFieldConfig } from '../dynamicform/interfaces/form-field.interface';
-import { IFormOptions } from '../dynamicform/interfaces/form-options.interface';
+import { IFieldConfig, IFormOptions } from '../dynamicform/interfaces/form-field.interface';
 import { FormField } from '../dynamicform/models/form-field.model';
 
 @Component({
@@ -14,9 +13,9 @@ export class HomePage implements OnInit {
   public demoForm: FormGroup;
   public validForm = false;
   public formOptions: IFormOptions = { resetOnSubmit: true };
-  public listFields : IFieldConfig[] = [];
+  public listFields: IFieldConfig[] = [];
   public loading = false;
-  
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {

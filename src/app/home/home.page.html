@@ -15,21 +15,54 @@
       <ion-title size="large">Dynamic Forms</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div>
-    <dynamic-form
-    *ngIf="!loading"
-    [fields]="listFields"
-    [formOptions]="formOptions"
-    (formGroup)="setDynamicallyForm($event)">
-  </dynamic-form>
-  </div>
+  <ion-slides
+  #formSlides
+  >
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <dynamic-form
+            *ngIf="!loading"
+            [fields]="listFields"
+            [formOptions]="formOptions"
+            (formGroup)="setDynamicallyForm($event)">
+          </dynamic-form>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <dynamic-form
+            *ngIf="!loading"
+            [fields]="listFields2"
+            [formOptions]="formOptions">
+          </dynamic-form>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
 
-<ion-footer>
+<!-- <ion-footer>
   <ion-toolbar>
     <ion-button expand="full" fill="solid" (click)="submitForm()" [disabled]="!validForm">
       Enviar
     </ion-button>
+  </ion-toolbar>
+
+
+</ion-footer> -->
+
+<ion-footer>
+  <ion-toolbar *ngIf="currentSlide === 0" [ngClass]="{ 'disabled-button' :  !validForm }" (click)="next()" color="primary" class="ion-text-center">
+    <ion-title>Siguiente</ion-title>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="currentSlide > 0" (click)="submitForm()"  color="primary" class="ion-text-center">
+    <ion-title>Guardar</ion-title>
   </ion-toolbar>
 </ion-footer>

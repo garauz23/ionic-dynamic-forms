@@ -1,14 +1,24 @@
 [
-    {
-      "request": {
-        "url": "^/getfieldsform1$",
-        "method": "POST"
-      },
-      "response": {
-        "status": 200,
-        "latency": 200,
-        "file": "form_fields/form1.json"
-      }
+  {
+    "request": {
+      "url": "^/getfieldsform1$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200,
+      "latency": 200,
+      "file": "form_fields/form1.json"
     }
-  ]
-  
+  },
+  {
+    "request": {
+      "url": "^/getfieldsform2$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200,
+      "latency": 200,
+      "file": "form_fields/demo.json"
+    }
+  }
+]

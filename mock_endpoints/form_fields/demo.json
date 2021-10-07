@@ -1,0 +1,38 @@
+{
+  "body": {
+    "fields": [
+      {
+        "type": "radiobutton",
+        "label": "Pais",
+        "name": "country",
+        "value": "pa",
+        "options": [
+          {
+            "key": "pa",
+            "value": "Panama"
+          },
+          {
+            "key": "co",
+            "value": "Colombia"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "label": "Contenido",
+        "name": "content",
+        "validations": [
+          {
+            "name": "required",
+            "validator": "required",
+            "message": "Escribe el contenido perro"
+          }
+        ]
+      }
+    ]
+  },
+  "status": {
+    "code": "U0000",
+    "description": "Se ha realizado la ejecución del servicio correctamente."
+  }
+}

@@ -20,7 +20,8 @@ export class HomePage implements OnInit {0.
   public validForm = false;
   public formOptions: IFormOptions = { resetOnSubmit: true };
   public listFields: IFieldConfig[] = [];
-  public listFields2: IFieldConfig[] = [];
+  // public listFields2: IFieldConfig[] = [];
+  public forms = [];
   public loading = false;
 
   constructor(private http: HttpClient) {}
@@ -58,7 +59,7 @@ export class HomePage implements OnInit {0.
     console.log(this.demoForm.value);
   }
 
-  setDynamicallyForm(event: any) {
+  setDynamicallyForm(event: any, form) {
     this.demoForm = event;
     this.demoForm.statusChanges.subscribe((change): void => {
       this.validForm = change === 'VALID';
@@ -67,10 +68,10 @@ export class HomePage implements OnInit {0.
 
   getForm() {
     this.loading = true;
-    this.listFields = [];
+    this.forms = [];
     this.http.post('http://localhost:8888/getfieldsform1', {})
     .subscribe((data: any) => {
-      const fields = data.body.fields;
+      const forms = data.body.forms;
       // fields.push({
       //   type: 'button',
       //   label: 'Guardar',
@@ -78,10 +79,17 @@ export class HomePage implements OnInit {0.
       //     console.log('pruebas');
       //   }
       // });
-      fields.forEach(field => {
+      forms.forEach((form, index) => {
         this.loading = false;
-        this.listFields.push(new FormField(field));
+        this.forms.push({ fields: []});
+        console.log(this.forms);
+        form.fields.forEach(field => {
+          console.log(field);
+          this.forms[index].fields.push(new FormField(field));
+        });
       });
+
+      console.log(this.forms);
       this.loading = false;
     });
 

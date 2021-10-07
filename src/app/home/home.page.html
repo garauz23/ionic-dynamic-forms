@@ -24,9 +24,9 @@
           <ion-col>
             <dynamic-form
             *ngIf="!loading"
-            [fields]="listFields"
+            [fields]="forms[0].fields"
             [formOptions]="formOptions"
-            (formGroup)="setDynamicallyForm($event)">
+            (formGroup)="setDynamicallyForm($event, demoForm)">
           </dynamic-form>
           </ion-col>
         </ion-row>
@@ -38,7 +38,7 @@
           <ion-col>
             <dynamic-form
             *ngIf="!loading"
-            [fields]="listFields2"
+            [fields]="forms[1].fields"
             [formOptions]="formOptions">
           </dynamic-form>
           </ion-col>

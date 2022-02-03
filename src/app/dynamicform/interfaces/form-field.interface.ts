@@ -10,8 +10,9 @@ export interface IFieldConfig {
   inputType?: string;
   placeholder?: string;
   options?: any[];
-  collections?: any;
+  collections?: ICollection[];
   readonly?: boolean;
+  length?: string;
   type: string;
   value?: any;
   validations?: IValidator[];
@@ -25,4 +26,9 @@ export interface IFieldConfig {
 
 export interface IFormOptions {
   resetOnSubmit?: boolean;
+}
+export interface ICollection {
+  title?: string;
+  name?: string;
+  endpoint?: string;
 }

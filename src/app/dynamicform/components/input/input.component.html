@@ -4,6 +4,7 @@
     <ion-input *ngIf="field.inputType !== 'password'"
       [formControlName]="field.name"
       [type]="field.inputType" [readonly]="field.readonly"
+      maxlength="{{ field.length || 250 }}"
     ></ion-input>
 
     <app-show-hide-password *ngIf="field.inputType === 'password'">

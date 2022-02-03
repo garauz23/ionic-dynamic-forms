@@ -1,0 +1,37 @@
+
+<form [formGroup]="group">
+  <ion-item lines="full" (click)="openOptions()">
+    <ion-label position="floating">{{ field.label }}</ion-label>
+    <ion-textarea
+    [formControlName]="field.name"
+    readonly="true"
+    disable="true"
+    [value]="field.value" >
+  </ion-textarea>
+    <!-- <ion-input
+      *ngIf="field.inputType !== 'password'"
+      [formControlName]="field.name"
+      [type]="field.inputType"
+      [readonly]="field.readonly"
+    ></ion-input> -->
+  </ion-item>
+  <ion-item lines="none" style="display: none;">
+    <ion-input *ngFor="let collection of field.collections"
+      [formControlName]="collection.name"
+      type="text" hidden="true"
+    ></ion-input>
+
+  </ion-item>
+  <ng-container *ngFor="let validation of field.validations">
+    <ion-item
+      *ngIf="
+        group.get(field.name).hasError(validation.name) &&
+        group.get(field.name).touched
+      "
+      lines="none"
+    >
+      <app-validate-message [validation]="validation"></app-validate-message>
+    </ion-item>
+  </ng-container>
+</form>
+

@@ -59,7 +59,7 @@ export class HomePage implements OnInit {0.
     console.log(this.demoForm.value);
   }
 
-  setDynamicallyForm(event: any, form) {
+  setDynamicallyForm(event: any) {
     this.demoForm = event;
     this.demoForm.statusChanges.subscribe((change): void => {
       this.validForm = change === 'VALID';
@@ -69,7 +69,7 @@ export class HomePage implements OnInit {0.
   getForm() {
     this.loading = true;
     this.forms = [];
-    this.http.post('http://localhost:8888/getfieldsform1', {})
+    this.http.post('http://localhost:8888/getfieldsform2', {})
     .subscribe((data: any) => {
       const forms = data.body.forms;
       // fields.push({

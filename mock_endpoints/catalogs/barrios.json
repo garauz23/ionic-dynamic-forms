@@ -1,0 +1,12 @@
+{
+    "body": {
+      "options": [
+        { "code": "1", "description": "BARRIO 1" },
+        { "code": "2", "description": "BARRIO 2" },
+        { "code": "3", "description": "BARRIO 3" },
+        { "code": "4", "description": "BARRIO 4" }
+      ]
+    },
+    "status": { "code": "U0000", "description": "" }
+  }
+  

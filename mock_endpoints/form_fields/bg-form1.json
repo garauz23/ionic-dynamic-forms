@@ -1,0 +1,205 @@
+{
+  "forms": [
+    {
+      "fields": [
+        {
+          "type": "select",
+          "label": "Estado civil",
+          "name": "maritalStatus",
+          "options": [
+            {
+              "key": "1",
+              "value": "Soltero (a)"
+            },
+            {
+              "key": "2",
+              "value": "Cansado (a)"
+            },
+            {
+              "key": "3",
+              "value": "Unido (a)"
+            }
+          ],
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "Selecciona tu estado civil"
+            }
+          ]
+        },
+        {
+          "type": "input",
+          "label": "Celular",
+          "inputType": "phone",
+          "name": "phonenumber",
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "Ingresa numero de telefono"
+            }
+          ]
+        },
+        {
+          "type": "input",
+          "label": "Correo electronico",
+          "inputType": "email",
+          "name": "email",
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "Escribe tu correo"
+            },
+            {
+              "name": "pattern",
+              "validator": "email",
+              "message": "email no valido"
+            }
+          ]
+        },
+        {
+          "type": "selectplus",
+          "label": "Direccion",
+          "name": "address",
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "Ingresa la direccion"
+            }
+          ],
+          "collections": [
+            {
+              "title": "Provincias",
+              "name": "provinces",
+              "endpoint": "getProvinces"
+            }
+          ]
+        },
+        {
+          "type": "input",
+          "label": "Edificio o Casa",
+          "inputType": "text",
+          "name": "buildingName",
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "Ingresa el nombre de tu edificio"
+            }
+          ]
+        },
+        {
+          "type": "selectplus",
+          "label": "Cargo",
+          "name": "jobselect",
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "Ingresa la direccion"
+            }
+          ],
+          "collections": [
+            {
+              "title": "Cargos",
+              "name": "job",
+              "endpoint": "getJobs"
+            }
+          ]
+        },
+        {
+          "type": "selectplus",
+          "label": "Salario Mensual",
+          "name": "incomeselect",
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "Ingresa la direccion"
+            }
+          ],
+          "collections": [
+            {
+              "title": "Salario Mensual",
+              "name": "income",
+              "endpoint": "getIncomeCatalog"
+            }
+          ]
+        },
+        {
+          "type": "selectplus",
+          "label": "Salario Mensual",
+          "name": "pepselc",
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "Ingresa la direccion"
+            }
+          ],
+          "collections": [
+            {
+              "title": "Salario Mensual",
+              "name": "income",
+              "endpoint": "getIncomeCatalog"
+            }
+          ]
+        },
+        {
+          "type": "selectplus",
+          "label": "Ciudadano de EEUU",
+          "name": "pepselc",
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "Ingresa la direccion"
+            }
+          ],
+          "collections": [
+            {
+              "title": "Salario Mensual",
+              "name": "income",
+              "endpoint": "getIncomeCatalog"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "type": "radiobutton",
+          "label": "Pais",
+          "name": "country",
+          "value": "pa",
+          "options": [
+            {
+              "key": "pa",
+              "value": "Panama"
+            },
+            {
+              "key": "co",
+              "value": "Colombia"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "label": "Contenido",
+          "name": "content",
+          "validations": [
+            {
+              "name": "required",
+              "validator": "required",
+              "message": "Escribe el contenido perro"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

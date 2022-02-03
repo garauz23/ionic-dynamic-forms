@@ -1,7 +1,7 @@
 <form [formGroup]="group">
   <ion-item>
     <ion-label position="floating">{{ field.label }}</ion-label>
-    <ion-select
+    <ion-select interface="action-sheet" 
       [placeholder]="field.placeholder"
       [formControlName]="field.name"
     >
@@ -12,4 +12,17 @@
       >
     </ion-select>
   </ion-item>
+
+  <ng-container *ngFor="let validation of field.validations">
+    <ion-item
+      *ngIf="
+        group.get(field.name).hasError(validation.name) &&
+        group.get(field.name).touched
+      "
+      lines="none"
+    >
+
+    <app-validate-message [validation]="validation"></app-validate-message>
+    </ion-item>
+  </ng-container>
 </form>

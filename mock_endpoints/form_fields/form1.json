@@ -1,23 +1,43 @@
 {
-  "body": {
     "forms": [
       {
         "fields": [
           {
-            "type": "input",
-            "label": "Usuario",
-            "inputType": "text",
-            "name": "username",
+            "type": "select",
+            "label": "Estado civil",
+            "name": "maritalStatus",
+            "options": [
+              {
+                "key": "1",
+                "value": "Soltero (a)"
+              },
+              {
+                "key": "2",
+                "value": "Cansado (a)"
+              },
+              {
+                "key": "3",
+                "value": "Unido (a)"
+              }
+            ],
             "validations": [
               {
                 "name": "required",
                 "validator": "required",
-                "message": "Escribe tu usuario perro"
-              },
+                "message": "Selecciona tu estado civil"
+              }
+            ]
+          },
+          {
+            "type": "input",
+            "label": "Celular",
+            "inputType": "phone",
+            "name": "phonenumber",
+            "validations": [
               {
-                "name": "pattern",
-                "validator": "onlyletters",
-                "message": "Solo texto"
+                "name": "required",
+                "validator": "required",
+                "message": "Ingresa numero de telefono"
               }
             ]
           },
@@ -30,7 +50,7 @@
               {
                 "name": "required",
                 "validator": "required",
-                "message": "Escribe tu correo perro"
+                "message": "Escribe tu correo"
               },
               {
                 "name": "pattern",
@@ -40,58 +60,112 @@
             ]
           },
           {
-            "type": "input",
-            "label": "Password",
-            "inputType": "password",
-            "name": "password",
+            "type": "selectplus",
+            "label": "Direccion",
+            "name": "address",
             "validations": [
               {
                 "name": "required",
                 "validator": "required",
-                "message": "Escribe tu password perro"
-              }
-            ]
-          },
-          {
-            "type": "select",
-            "label": "Sexo",
-            "name": "gender",
-            "value": "male",
-            "options": [
-              {
-                "key": "male",
-                "value": "Masculino"
-              },
-              {
-                "key": "female",
-                "value": "Femenino"
-              },
-              {
-                "key": "amigue",
-                "value": "Amigue"
-              }
-            ]
-          },
-          {
-            "type": "date",
-            "label": "Fecha de nacimiento",
-            "name": "dob",
-            "validations": [
-              {
-                "name": "required",
-                "validator": "required",
-                "message": "Escribe tu dob perro"
+                "message": "Ingresa la direccion"
               }
             ],
-            "dateOpts": {
-              "format": "MM/DD/YYYY"
-            }
+            "collections": [
+              {
+                "title": "Provincias",
+                "name": "provinces",
+                "endpoint": "getProvinces"
+              }
+            ]
           },
           {
-            "type": "checkbox",
-            "label": "Acepta los T&C",
-            "name": "term",
-            "value": false
+            "type": "input",
+            "label": "Edificio o Casa",
+            "inputType": "text",
+            "name": "buildingName",
+            "validations": [
+              {
+                "name": "required",
+                "validator": "required",
+                "message": "Ingresa el nombre de tu edificio"
+              }
+            ]
+          },
+          {
+            "type": "selectplus",
+            "label": "Cargo",
+            "name": "jobselect",
+            "validations": [
+              {
+                "name": "required",
+                "validator": "required",
+                "message": "Ingresa la direccion"
+              }
+            ],
+            "collections": [
+              {
+                "title": "Cargos",
+                "name": "job",
+                "endpoint": "getJobs"
+              }
+            ]
+          },
+          {
+            "type": "selectplus",
+            "label": "Salario Mensual",
+            "name": "incomeselect",
+            "validations": [
+              {
+                "name": "required",
+                "validator": "required",
+                "message": "Ingresa la direccion"
+              }
+            ],
+            "collections": [
+              {
+                "title": "Salario Mensual",
+                "name": "income",
+                "endpoint": "getIncomeCatalog"
+              }
+            ]
+          },
+          {
+            "type": "selectplus",
+            "label": "Salario Mensual",
+            "name": "pepselc",
+            "validations": [
+              {
+                "name": "required",
+                "validator": "required",
+                "message": "Ingresa la direccion"
+              }
+            ],
+            "collections": [
+              {
+                "title": "Salario Mensual",
+                "name": "income",
+                "endpoint": "getIncomeCatalog"
+              }
+            ]
+          },
+          {
+            "type": "selectplus",
+            "label": "Ciudadano de EEUU",
+            "name": "pepselc",
+            "validations": [
+              {
+                "name": "required",
+                "validator": "required",
+                "message": "Ingresa la direccion"
+              }
+            ],
+            "collections": [
+              {
+                "title": "Salario Mensual",
+                "name": "income",
+                "endpoint": "getIncomeCatalog"
+              }
+            ]
           }
         ]
       },
@@ -127,10 +201,5 @@
           }
         ]
       }
-    ],
-    "status": {
-      "code": "U0000",
-      "description": "Se ha realizado la ejecución del servicio correctamente."
-    }
+    ]
   }
-}

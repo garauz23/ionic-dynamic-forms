@@ -15,6 +15,8 @@ import { ValidateMessageComponent } from './components/validate-message/validate
 import { InputActionComponent } from './components/input-action/input-action.component';
 import { HiddenComponent } from './components/hidden/hidden.component';
 import { TextareaComponent } from './components/textarea/textarea.component';
+import { SelectPlusComponent } from './components/select-plus/select-plus.component';
+import { OptionsModalComponent } from './components/select-plus/options-modal/options-modal.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { TextareaComponent } from './components/textarea/textarea.component';
     ValidateMessageComponent,
     InputActionComponent,
     HiddenComponent,
-    TextareaComponent
+    TextareaComponent,
+    SelectPlusComponent,
+    OptionsModalComponent
   ],
   imports: [CommonModule, IonicModule, ReactiveFormsModule, FormsModule],
   exports: [DynamicFormComponent, ReactiveFormsModule],

@@ -10,6 +10,8 @@ import { CheckboxComponent } from '../components/checkbox/checkbox.component';
 import { InputActionComponent } from '../components/input-action/input-action.component';
 import { HiddenComponent } from '../components/hidden/hidden.component';
 import { TextareaComponent } from '../components/textarea/textarea.component';
+import { SelectPlusComponent } from '../components/select-plus/select-plus.component';
+
 const componentMapper = {
   input: InputComponent,
   button: ButtonComponent,
@@ -19,7 +21,8 @@ const componentMapper = {
   checkbox: CheckboxComponent,
   inputaction: InputActionComponent,
   hidden: HiddenComponent,
-  textarea: TextareaComponent
+  textarea: TextareaComponent,
+  selectplus: SelectPlusComponent
 };
 
 

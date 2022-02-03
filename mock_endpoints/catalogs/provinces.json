@@ -1,0 +1,20 @@
+{
+  "body": {
+    "options": [
+      { "code": "1", "description": "BOCAS DEL TORO" },
+      { "code": "4", "description": "CHIRIQUI" },
+      { "code": "2", "description": "COCLE" },
+      { "code": "3", "description": "COLON" },
+      { "code": "269", "description": "COMARCA EMBERA" },
+      { "code": "10", "description": "COMARCA KUNA YALA" },
+      { "code": "271", "description": "COMARCA NGOBE BUGLE" },
+      { "code": "5", "description": "DARIEN" },
+      { "code": "6", "description": "HERRERA" },
+      { "code": "7", "description": "LOS SANTOS" },
+      { "code": "8", "description": "PANAMA" },
+      { "code": "280", "description": "PANAMA OESTE" },
+      { "code": "9", "description": "VERAGUAS" }
+    ]
+  },
+  "status": { "code": "U0000", "description": "" }
+}

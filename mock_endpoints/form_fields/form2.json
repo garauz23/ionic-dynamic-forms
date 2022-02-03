@@ -1,0 +1,143 @@
+{
+  "body": {
+    "forms": [
+      {
+        "fields": [
+          {
+            "type": "selectplus",
+            "label": "Direccion",
+            "name": "address",
+            "validations": [
+              {
+                "name": "required",
+                "validator": "required",
+                "message": "Ingresa la direccion"
+              }
+            ],
+            "collections": [
+              {
+                "title": "Provincias",
+                "name": "provincia",
+                "endpoint": "getProvinces"
+              },
+              {
+                "title": "Corregimiento",
+                "name": "corregimiento",
+                "endpoint": "getCorregimientos"
+              },
+              {
+                "title": "Distrito",
+                "name": "distrito",
+                "endpoint": "getDistritos"
+              },
+              {
+                "title": "Barrio",
+                "name": "barrio",
+                "endpoint": "getBarrios"
+              }
+            ]
+          },
+          {
+            "type": "input",
+            "label": "Celular",
+            "inputType": "phone",
+            "name": "phonenumber",
+            "length": "9",
+            "validations": [
+              {
+                "name": "required",
+                "validator": "required",
+                "message": "Ingresa numero de telefono"
+              },
+              {
+                "name": "maxLength",
+                "validator": "max9",
+                "message": "Maximo 9 boom!"
+              }
+            ]
+          },
+          {
+            "type": "input",
+            "label": "Correo electronico",
+            "inputType": "email",
+            "name": "email",
+            "validations": [
+              {
+                "name": "required",
+                "validator": "required",
+                "message": "Escribe tu correo perro"
+              },
+              {
+                "name": "pattern",
+                "validator": "email",
+                "message": "email no valido"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "label": "Estado civil",
+            "name": "maritalStatus",
+            "options": [
+              {
+                "key": "1",
+                "value": "Soltero (a)"
+              },
+              {
+                "key": "2",
+                "value": "Cansado (a)"
+              },
+              {
+                "key": "3",
+                "value": "Unido (a)"
+              }
+            ],
+            "validations": [
+              {
+                "name": "required",
+                "validator": "required",
+                "message": "Selecciona tu estado civil"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "fields": [
+          {
+            "type": "radiobutton",
+            "label": "Pais",
+            "name": "country",
+            "value": "pa",
+            "options": [
+              {
+                "key": "pa",
+                "value": "Panama"
+              },
+              {
+                "key": "co",
+                "value": "Colombia"
+              }
+            ]
+          },
+          {
+            "type": "textarea",
+            "label": "Contenido",
+            "name": "content",
+            "validations": [
+              {
+                "name": "required",
+                "validator": "required",
+                "message": "Escribe el contenido perro"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "status": {
+      "code": "U0000",
+      "description": "Se ha realizado la ejecución del servicio correctamente."
+    }
+  }
+}

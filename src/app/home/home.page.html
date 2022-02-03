@@ -15,9 +15,16 @@
       <ion-title size="large">Dynamic Forms</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-slides
-  #formSlides
-  >
+
+  <!-- <dynamic-form
+    *ngIf="!loading"
+    [fields]="forms[0].fields"
+    [formOptions]="formOptions"
+    (formGroup)="setDynamicallyForm($event)">
+  </dynamic-form> -->
+
+
+  <ion-slides #formSlides>
     <ion-slide>
       <ion-grid>
         <ion-row>
@@ -26,7 +33,7 @@
             *ngIf="!loading"
             [fields]="forms[0].fields"
             [formOptions]="formOptions"
-            (formGroup)="setDynamicallyForm($event, demoForm)">
+            (formGroup)="setDynamicallyForm($event)">
           </dynamic-form>
           </ion-col>
         </ion-row>
@@ -54,8 +61,6 @@
       Enviar
     </ion-button>
   </ion-toolbar>
-
-
 </ion-footer> -->
 
 <ion-footer>

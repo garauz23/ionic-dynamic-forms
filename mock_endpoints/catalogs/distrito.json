@@ -1,0 +1,12 @@
+{
+    "body": {
+      "options": [
+        { "code": "1", "description": "DISTRITO 1" },
+        { "code": "2", "description": "DISTRITO 2" },
+        { "code": "3", "description": "DISTRITO 3" },
+        { "code": "4", "description": "DISTRITO 4" }
+      ]
+    },
+    "status": { "code": "U0000", "description": "" }
+  }
+  

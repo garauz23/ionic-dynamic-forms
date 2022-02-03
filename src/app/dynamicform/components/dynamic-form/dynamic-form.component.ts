@@ -18,11 +18,14 @@ export class DynamicFormComponent implements OnInit {
     'required': Validators.required,
     'onlyletters': Validators.pattern('^[a-zA-Z]+$'),
     'email': Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
+    'phone': Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
+    'max9': Validators.maxLength(9),
+    'min9': Validators.minLength(9)
   }
 
-  get value() {
-    return this.form.value;
-  }
+  // get value() {
+  //   return this.form.value;
+  // }
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -53,6 +56,16 @@ export class DynamicFormComponent implements OnInit {
         this.bindValidations(field.validations || [])
       );
       group.addControl(field.name, control);
+
+      if (field.collections) {
+        field.collections.forEach((collection, index) => {
+          const control = this.formBuilder.control(
+            field.value,
+            this.bindValidations(field.validations || [])
+          );
+          group.addControl(collection.name, control);
+        });
+      }
     });
     this.formGroup.emit(group);
     return group;

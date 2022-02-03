@@ -1,0 +1,67 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="px-cool py-0">
+    <ion-buttons slot="start" *ngIf="currentSlide > 0">
+      <ion-button (click)="prev()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-left p-0 text-ink large-size bold-font">{{ title }}</ion-title>
+  </ion-toolbar>
+  <ion-searchbar showCancelButton="focus" cancelButtonText="Custom Cancel"></ion-searchbar>
+
+  <!-- <bg-input *ngIf="placeholderSearch"
+    [class]="'search-bar shadow-low pr-poco pl-poco'"
+    [placeholder]="placeholderSearch"
+    [lines]="false"
+    [icon]="'bg-ico-search'"
+    [(ngModel)]="sentence"
+    (ionChange)="searchItems()">
+  </bg-input> -->
+</ion-header>
+
+
+<ion-content class="ion-no-padding">
+  <dynamic-form
+  [fields]="fields"
+  [formOptions]="formOptions"
+  (formGroup)="onChangeListener($event)">
+</dynamic-form>
+
+  <ion-slides [options]="slideOptions" #InputFormSlide>
+    <ion-slide *ngFor="let collection of collections">
+      <ion-grid class="ion-no-padding">
+        <!-- <ion-row>
+          <ion-col>
+            {{ collection.title }}
+          </ion-col>
+        </ion-row> -->
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-item *ngFor="let item of itemList[currentSlide]" (click)="selectOption(item)">
+                <ion-label class="base-size semibold-font">
+                  <p>{{item?.description}}</p>
+                </ion-label>
+              </ion-item>
+              <!-- <bg-message *ngIf="itemList?.length === 0" [properties]="properties"></bg-message> -->
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+
+<ion-footer class="shadow-high ion-no-border">
+  <div>
+    <ion-button
+      (click)="modalController.dismiss()"
+      color="dark"
+      fill="clear"
+      class="base-size semibold-font my-0">
+      <i class="bg-ico-erase text-concrete medium-size mr-poco semibold-font"></i>
+      <span>{{ "Close" }}</span>
+    </ion-button>
+  </div>
+</ion-footer>

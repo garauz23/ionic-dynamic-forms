@@ -18,7 +18,62 @@
     "response": {
       "status": 200,
       "latency": 200,
+      "file": "form_fields/form2.json"
+    }
+  },
+  {
+    "request": {
+      "url": "^/getfieldsform2$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200,
+      "latency": 200,
       "file": "form_fields/demo.json"
+    }
+  },
+  {
+    "request": {
+      "url": "^/getProvinces$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200,
+      "latency": 200,
+      "file": "catalogs/provinces.json"
+    }
+  },
+  {
+    "request": {
+      "url": "^/getCorregimientos$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200,
+      "latency": 200,
+      "file": "catalogs/corregimientos.json"
+    }
+  },
+  {
+    "request": {
+      "url": "^/getDistritos$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200,
+      "latency": 200,
+      "file": "catalogs/distrito.json"
+    }
+  },
+  {
+    "request": {
+      "url": "^/getBarrios$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200,
+      "latency": 200,
+      "file": "catalogs/barrios.json"
     }
   }
 ]

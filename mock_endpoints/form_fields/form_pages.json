@@ -1,0 +1,36 @@
+{
+    "body": {
+        "form": {
+            "fields": [
+                {
+                  "type": "input",
+                  "label": "Usuario",
+                  "inputType": "text",
+                  "name": "username",
+                  "value": "elpepe",
+                  "validations": [
+                    {
+                      "name": "required",
+                      "validator": "required",
+                      "message": "Escribe tu usuario perro"
+                    },
+                    {
+                      "name": "pattern",
+                      "validator": "alphanumeric",
+                      "message": "Letras y numeros"
+                    },
+                    {
+                      "name": "min",
+                      "validator": "min",
+                      "message": "Letras y numeros"
+                    }
+                  ]
+                }
+              ]
+        }
+    },
+    "status": {
+      "code": "U0000",
+      "description": "Se ha realizado la ejecución del servicio correctamente."
+    }
+  }

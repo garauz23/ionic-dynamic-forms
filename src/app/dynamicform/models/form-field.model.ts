@@ -4,6 +4,7 @@ export class FormField implements IFieldConfig {
   label?: string;
   name?: string;
   inputType?: string;
+  length?: string;
   placeholder?: string;
   options?: any[];
   collections?: any;
@@ -29,6 +30,7 @@ export class FormField implements IFieldConfig {
     this.validations = field.validations;
     this.dateOpts = field.dateOpts;
     this.action = field.action;
+    this.length = field.length;
   }
 
 }

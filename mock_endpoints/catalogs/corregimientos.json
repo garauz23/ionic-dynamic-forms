@@ -1,0 +1,12 @@
+{
+    "body": {
+      "options": [
+        { "code": "1", "description": "CORREGIMIENTO 1" },
+        { "code": "2", "description": "CORREGIMIENTO 2" },
+        { "code": "3", "description": "CORREGIMIENTO 3" },
+        { "code": "4", "description": "CORREGIMIENTO 4" }
+      ]
+    },
+    "status": { "code": "U0000", "description": "" }
+  }
+  
